@@ -5,6 +5,8 @@ const cors = require('cors');
 const knex = require('knex');
 const { config } = require('dotenv');
 
+const PORT = process.env.PORT || 2000;
+
 require('dotenv').config();
 
 const register = require('./controllers/register');
@@ -40,6 +42,6 @@ app.put('/image', (req,res) => { image.handleImage(req, res, db)} )
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
 
 
-app.listen(2000, () => {
-    console.log('app is running on port 2000');
+app.listen(PORT, () => {
+    console.log(`app is running on port ${PORT}`);
 })
