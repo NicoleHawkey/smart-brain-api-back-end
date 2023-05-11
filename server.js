@@ -5,6 +5,8 @@ const cors = require('cors');
 const knex = require('knex');
 const { config } = require('dotenv');
 
+require('dotenv').config();
+
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
@@ -16,7 +18,7 @@ const db = knex({
     client: 'pg',
     connection: {
       host : process.env.DATABASE_LOCALHOST,
-      port : 5432,
+      port : process.env.DATABASE_PORT,
       user : process.env.DATABASE_USER,
       password : process.env.DATABASE_PASSWORD,
       database : process.env.DATABASE_NAME
