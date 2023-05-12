@@ -5,7 +5,7 @@ const cors = require('cors');
 const knex = require('knex');
 const { config } = require('dotenv');
 
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 3000;
 
 require('dotenv').config();
 
