@@ -5,7 +5,7 @@ const cors = require('cors');
 const knex = require('knex');
 const { config } = require('dotenv');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 2000;
 
 require('dotenv').config();
 
@@ -35,8 +35,7 @@ app.use(cors());
 app.use(express.json());
 
 
-app.get('/', (req, res) => {res.send('success')})
-
+app.get('/', (req, res) => {res.send('success')});
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt) })
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db) })
