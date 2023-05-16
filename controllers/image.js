@@ -1,11 +1,13 @@
 const Clarifai = require('clarifai');
+const { config } = require('dotenv');
+
+config();
 
 const app = new Clarifai.App({
-    apiKey: process.env.CLARIFAI_API_KEY
+    apiKey: process.env.API_KEY
   }); 
 
 const handleApiCall = (req, res) => {
-    console.log('Input:', req.body.input);
     app.models.predict({
       id: 'face-detection',
       name: 'face-detection',
